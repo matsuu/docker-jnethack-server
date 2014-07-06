@@ -65,7 +65,7 @@ RUN \
     -e "/XI18N/i #include <locale.h>" \
     sys/unix/unixmain.c && \ 
   sed -i \
-    -e "s:/\* \(#define LINUX\) \*/:\1:" \
+    -e "s:/\* \(#define\s*\(SYSV\|LINUX\|TERMINFO\|TIMED_DELAY\)\)\s*\*/:\1:" \
     -e "s:/\* \(#define VAR_PLAYGROUND\).*:\1 \"/nh343/var\":" \
     include/unixconf.h && \
   sed -i \
